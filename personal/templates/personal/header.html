@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Artificial Intelligence Financial Advisor</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+        
+        <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        
+        <style type="text/css">
+            .tabs-wrap 
+            {
+            	margin-top: 40px;
+            }
+            .tab-content .tab-pane 
+            {
+            	padding: 20px 0;
+            }
+
+
+            .nav :hover 
+            {
+              color: #0099FF;
+              cursor: pointer;
+              background-color: none;
+            }
+
+            .nav .active 
+            {
+              border-top-left-radius: 5px;
+              border-top-right-radius: 8px;
+              border-top: 2px solid #0099FF;
+            }
+
+            .page_button
+            {
+                background: #0099FF; /*#66ccff; /*#FFD34E;*/
+                display: inline-block;
+                font-size: 14px;
+                padding: 5px 10px;
+                margin: 4px 2px;
+                color: #fff;
+                position: relative;
+                overflow: hidden;
+                margin-top: -16px;
+                border: 2px solid  #0099FF;/*#66ccff; /*#FFD34E;*/
+            }
+
+            .page_button:hover 
+            {
+              background: #fff;
+              color: #0099FF;
+              box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            }
+
+            /*
+              Dark blue : #0099FF
+              Blue : #0099FF
+            */
+        </style>
+
+        <script type='text/javascript'>
+          $(document).ready(function() 
+          {
+              $('.continue').click(function()
+              {
+                  $('.nav-tabs > .active').next('li').find('a').trigger('click');
+              });
+
+              $('.back').click(function()
+              {
+                  $('.nav-tabs > .active').prev('li').find('a').trigger('click');
+              });         
+          });
+        </script>
+    </head>
+    
+    <body style="background-color:#dadada; margin:40px;">
+        <div class="container tabs-wrap" style="background-color:#fff; padding:0px; ">
+        
+            <ul class="nav nav-tabs" role="tablist" style="margin-top:40px; border-bottom:1px solid #0099FF;">
+                <li role="presentation" class="active">
+                    <a href="#General_Information" aria-controls="General_Information" role="tab" data-toggle="tab" aria-expanded="true">General Information</a>
+                </li>
+                <li>
+                    <a href="#Financial" aria-controls="Financial" role="tab" data-toggle="tab" aria-expanded="false">Financial</a>
+                </li>
+                <li>
+                    <a href="#Short_Term_Goals" aria-controls="Short_Term_Goals" role="tab" data-toggle="tab" aria-expanded="false">Short - Term Goals</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="General_Information">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="name">Name:</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="name">
+                                </div>
+                            </div>
+                        
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="uid">UID:</label>                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="uid">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="age">Age:</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="number" class="form-control" id="age">
+                                </div>
+                            </div>
+                        
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="nationality">Nationality:</label>                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="nationality">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div clas="row">
+                            <div class="col-sm-6">
+                                <div class="col-sm-12">
+                                    <label for="gender">Gender:</label>                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="radio">
+                                      <label><input type="radio" name="genderradio">Male</label>
+                                    </div>
+                                    <div class="radio">
+                                      <label><input type="radio" name="genderradio">Female</label>
+                                    </div>
+                                    <div class="radio disabled">
+                                      <label><input type="radio" name="genderradio">Other</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="col-sm-12">
+                                    <label for="status">Marrital Status:</label>                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="radio">
+                                      <label><input type="radio" name="marritalstatus">Married</label>
+                                    </div>
+                                    <div class="radio">
+                                      <label><input type="radio" name="marritalstatus">Unmarried</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br><br>
+                    <center>
+                        <a class="btn page_button ">Submit</a>
+                        <a class="btn page_button continue">Continue</a>
+                    </center>
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="Financial">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="occupation">Occupation:</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="occupation">
+                                </div>
+                            </div>
+                        
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="jobtype">Job Type:</label>                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <select class="form-control" id="jobtype">
+                                      <option>select</option>
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="income">Income (In months):</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="number" class="form-control" id="income">
+                                </div>
+                            </div>
+                        
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="expenditure">Expenditure (In months):</label>                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="expenditure">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="currentsavings">Current Savings:</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="number" class="form-control" id="currentsavings">
+                                </div>
+                            </div>
+                        
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="dependentperson">Dependent Person:</label>                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="number" class="form-control" id="dependentperson">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div clas="row">
+                            <div class="col-sm-6">
+                                <div class="col-sm-12">
+                                    <label for="pension">Age Pension:</label>                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="radio">
+                                      <label><input type="radio" name="pension">Yes</label>
+                                    </div>
+                                    <div class="radio">
+                                      <label><input type="radio" name="pension">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br><br>
+                    <center>
+                        <a class="btn page_button ">Submit</a><br><br>
+                        <a class="btn page_button back">Back</a>
+                        <a class="btn page_button continue">Continue</a>
+                    </center>  
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="Short_Term_Goals">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="goalname">Goal Name:</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <select class="form-control" id="goalname">
+                                      <option>select</option>
+                                      <option>Car</option>
+                                      <option>Home</option>
+                                      <option>Trip</option>
+                                      <option>Adventure</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="goalvalue">Goal value in Today's value terms:</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="goalvalue">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="timetogoal">Time to Goal (In months):</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="timetogoal">
+                                </div>
+                            </div>
+                        
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="investamount">Amount you intend to invest per month:</label>                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="investamount">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="expectreturns">Expected rate of return you expect from your investment (%):</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="expectreturns">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br><br>
+                    <center>
+                        <a class="btn page_button back">Back</a>
+                        <a class="btn page_button ">Submit</a>
+                    </center> 
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

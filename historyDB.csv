@@ -1,0 +1,19 @@
+Name,UID,Age,Nationality,Gender,Maritial_Status,Occupation,Job_type,Total Income per month,Total Expenses per month,Surplus per month,How much savings you have now? (Rs),Dependent person,Age_pension,Goal Name,Goal Value in today value terms,Time to Goal (in months),Amount you intend to invest per month for this goal,Expected rate of return you expect from your investment,Future Value of Goal,Future Value of Existing savings,Value of future investment,Shortfall in goal,Will the goal be achieved
+kk,33,33,bk,Male,Married,yfj,Private,5656,455,5201,766878,565,Yes,Buying a House,545,1,5667,3,548,771990,5666,-777108,Yes
+Amol,1,30,Indian,Male,Married,,Government,10000,100000,-90000,15000000,,Yes,Buying a House,5000000,24,10000,5,5852799,17593318,251859,-11992378,Yes
+Amol,1,30,Indian,Male,Married,,select,100000,80000,20000,1000000,,Yes,Buying a House,5000000,24,100000,8,5852799,1172887,2593318,2086594,No
+Amol,1,30,Indian,Male,Married,,select,100000,10000,90000,100000,,Yes,Buying a House,1000,1,1,8,1006,100666,0,-99660,Yes
+Amol,1,30,Indian,Male,Married,,select,100000,10000,90000,100000,,Yes,Buying a House,1000,1,1,8,1006,100666,0,-99660,Yes
+Amol,1,30,Indian,Male,Married,,select,100000,10000,90000,100000,,Yes,Buying a House,1000,1,1,8,1006,100666,0,-99660,Yes
+Amol,1,30,Indian,Male,Married,,select,100000,10000,90000,100000,,Yes,Buying a House,1000,1,1,8,1006,100666,0,-99660,Yes
+Amol,1,5,Indian,Male,Married,,Government,8,8,0,8,,Yes,Education of Child,1,1,1,1,1,8,0,-7,Yes
+Amol,1,5,Indian,Male,Married,,Government,8,8,0,8,,Yes,Education of Child,1,1,1,1,1,8,0,-7,Yes
+Amol,1,5,Indian,Male,Married,,Government,8,8,0,8,,Yes,Education of Child,1,1,1,1,1,8,0,-7,Yes
+Amol,1,1,Indian,Male,Married,,select,1,1,0,1,,Yes,Education of Child,1,1,1,1,1,1,0,0,No
+Amol,1,1,Indian,Male,Married,,select,1,1,0,1,,Yes,Education of Child,1,1,1,1,1,1,0,0,No
+Amol,1,1,Indian,Male,Married,,select,1,1,0,1,,Yes,Education of Child,1,1,1,1,1,1,0,0,No
+Amol,1,1,Indian,Male,Married,,select,1,1,0,1,,Yes,Buying a House,1,1,1,1,1,1,0,0,No
+Amol,1,1,1,Male,Married,,select,1,1,0,1,,Yes,Education of Child,1,1,1,1,1,1,0,0,No
+a,1,1,Indian,Male,Married,a,Government,1,1,0,1,1,Yes,Buying a House,1,1,1,1,1,1,0,0,No
+a,a,1,a,Male,Married,a,Government,1,1,0,1,1,Yes,Buying a House,1,1,1,1,1,1,0,0,No
+a,a,1,a,Male,Married,s,Government,1,1,0,1,1,Yes,Buying a House,1,1,1,1,1,1,0,0,No

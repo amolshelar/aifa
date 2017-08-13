@@ -1,0 +1,504 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Artificial Intelligence Financial Advisor</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+     <script src="{% static './js/jquery.min.js' %}"></script>
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+
+        
+       
+       
+        
+        <style type="text/css">
+            .tabs-wrap 
+            {
+            	margin-top: 40px;
+            }
+            .tab-content .tab-pane 
+            {
+            	padding: 20px 0;
+            }
+
+
+            .nav :hover 
+            {
+              color: #0099FF;
+              cursor: pointer;
+              background-color: none;
+            }
+
+            .nav .active 
+            {
+              border-top-left-radius: 5px;
+              border-top-right-radius: 8px;
+              border-top: 2px solid #0099FF;
+            }
+
+            .page_button
+            {
+                background: #0099FF; /*#66ccff; /*#FFD34E;*/
+                display: inline-block;
+                font-size: 14px;
+                padding: 5px 10px;
+                margin: 4px 2px;
+                color: #fff;
+                position: relative;
+                overflow: hidden;
+                margin-top: -16px;
+                border: 2px solid  #0099FF;/*#66ccff; /*#FFD34E;*/
+            }
+
+            .page_button:hover 
+            {
+              background: #fff;
+              color: #0099FF;
+              box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            }
+
+            /*
+              Dark blue : #0099FF
+              Blue : #0099FF
+            */
+        </style>
+
+        <script type='text/javascript'>
+          $(document).ready(function() 
+          {
+              $('.continue').click(function()
+              {
+                  $('.nav-tabs > .active').next('li').find('a').trigger('click');
+              });
+
+              $('.back').click(function()
+              {
+                  $('.nav-tabs > .active').prev('li').find('a').trigger('click');
+              });         
+          });
+
+	function ValidateForm1()
+	{
+	var x1=document.forms["form1"]["name2"].value;
+	var x2=document.forms["form1"]["uid"].value;
+	var x3=document.forms["form1"]["age"].value;
+	var x4=document.forms["form1"]["nationality"].value;
+	if(x1=="")
+	{
+		alert("Name Must be filled out..!!! ");
+		return false;
+	}
+	if(x2=="")
+	{
+		alert("UID Must be filled out..!!! ");
+		return false;
+	}
+	if(x3=="")
+	{
+		alert("Age Must be filled out..!!! ");
+		return false;
+	}
+	if(x4=="")
+	{
+		alert("Nationality Must be filled out..!!! ");
+		return false;
+	}
+	var marrital=document.getElementsByName("marritalstatus");
+	var marritalvalue=false;
+	for(var i=0;i<marrital.length;i++)
+	{
+	if(marrital[i].checked==true)
+	{
+	marritalvalue=true;
+	}
+	
+	}
+	if(!marritalvalue)
+	{
+	alert("Please choose the marrital status..!!! ");
+	return false;
+	}
+
+	var gender=document.getElementsByName("genderradio");
+	var value=false;
+	for(var i=0;i<gender.length;i++)
+	{
+	if(gender[i].checked==true)
+	{
+	value=true;
+	}
+	
+	}
+	if(!value)
+	{
+	alert("Please choose the gender..!!! ");
+	return false;
+	}
+}
+
+function ValidateForm2()
+	{
+	var x5=document.forms["form1"]["income"].value;
+	var x6=document.forms["form1"]["expenditure"].value;
+	var x7=document.forms["form1"]["currentsavings"].value;
+	if(x5=="")
+	{
+		alert("Income Must be filled out..!! ");
+		return false;
+	}
+	if(x6=="")
+	{
+		alert("Expenditure Must be filled out..!! ");
+		return false;
+	}
+	if(x7=="")
+	{
+		alert("Current savings Must be filled out..!! ");
+		return false;
+	}
+	var age1=document.getElementsByName("pension");
+	var value1=false;
+	for(var i=0;i<age1.length;i++)
+	{
+	if(age1[i].checked==true)
+	{
+	value1=true;
+	}
+	
+	}
+	if(!value1)
+	{
+	alert("Please choose the Age pension..!!! ");
+	return false;
+	}
+}
+
+function ValidateForm3()
+	{
+	var x8=document.forms["form1"]["goalvalue"].value;
+	var x9=document.forms["form1"]["timetogoal"].value;
+	var x10=document.forms["form1"]["investamount"].value;
+	var x11=document.forms["form1"]["expectreturns"].value;
+	var x12=document.forms["form1"]["FileUpload"].value;
+	var x13=document.forms["form1"]["goalname"].value;
+	if(x13=="select your goal")
+	{
+		alert("Please select your goal..!!");
+		return false;
+	}
+	if(x8=="")
+	{
+		alert("Please enter the goal amount value..!!");
+		return false;
+	}
+	if(x9=="")
+	{
+		alert(" Please enter the Time to goal Value ..!! ");
+		return false;
+	}
+	if(x10=="")
+	{
+		alert("Please enter the Investment amount Value ..!! ");
+		return false;
+	}
+	if(x11=="")
+	{
+		alert("Please enter the Expected returns on amount Value ..!!");
+		return false;
+	}
+	if(x12=="")
+	{
+		alert("Please select the train file..!!");
+		return false;
+	}
+	
+	
+	
+	}
+        </script>
+    </head>
+    
+    <body style="background-color:#dadada; margin:40px;">
+        <div class="container tabs-wrap" style="background-color:#fff; padding:0px; ">
+        
+            <ul class="nav nav-tabs" role="tablist" style="margin-top:40px; border-bottom:1px solid #0099FF;">
+                <li role="presentation" class="active">
+                    <a href="#General_Information" aria-controls="General_Information" role="tab" data-toggle="tab" aria-expanded="true">General Information</a>
+                </li>
+                <li>
+                    <a href="#Financial" aria-controls="Financial" role="tab" data-toggle="tab" aria-expanded="false">Financial</a>
+                </li>
+                <li>
+                    <a href="#Short_Term_Goals" aria-controls="Short_Term_Goals" role="tab" data-toggle="tab" aria-expanded="false">Short - Term Goals</a>
+                </li>
+            </ul>
+
+            <form  class="contact-form" method="POST" action="/personal/register3/"  name="form1">
+{% csrf_token %}
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="General_Information">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="name">Name <span style="color:red;">*</span> :</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" name="name2" id="name">
+                                </div>
+                            </div>
+                        
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="uid">UID<span style="color:red;">*</span> :</label>                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" name="uid">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="age">Age <span style="color:red;">*</span> :</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="number" class="form-control" name="age">
+                                </div>
+                            </div>
+                        
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="nationality">Nationality <span style="color:red;">*</span> :</label>                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" name="nationality">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div clas="row">
+                            <div class="col-sm-6">
+                                <div class="col-sm-12">
+                                    <label for="gender">Gender<span style="color:red;">*</span> :</label>                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="radio">
+                                      <label><input type="radio" name="genderradio"  value="Male">Male</label>
+                                    </div>
+                                    <div class="radio">
+                                      <label><input type="radio" name="genderradio" value="Female">Female</label>
+                                    </div>
+                                    <div class="radio disabled">
+                                      <label><input type="radio" name="genderradio" value="Others">Other</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="col-sm-12">
+                                    <label for="status">Marrital Status<span style="color:red;">*</span> :</label>                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="radio">
+                                      <label><input type="radio" name="marritalstatus" id="marritalstatus1" value="Married">Married</label>
+                                    </div>
+                                    <div class="radio">
+                                      <label><input type="radio" name="marritalstatus" id="marritalstatus1" value="Unmarried">Unmarried</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+</script>
+                    <br><br><br>
+                    <center>
+                       <button type="button" class="btn btn-primary" onclick="return ValidateForm1()">Submit</button><br><br><br>
+                        <a class="btn page_button continue">Continue</a>
+
+
+                    </center>
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="Financial">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-sm-6 form-group">
+
+                                <div class="col-sm-12">
+                                    <label for="occupation">Occupation:</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" name="occupation">
+                                </div>
+                            </div>
+                        
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="jobtype">Job Type:</label>                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <select class="form-control" name="jobtype">
+                                      <option>select</option>
+                                      <option>Government</option>
+                                      <option>Private</option>
+                                      <option>Self-Owned</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="income">Income (Per month)<span style="color:red;">*</span> :</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="number" class="form-control" name="income">
+                                </div>
+                            </div>
+                        
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="expenditure">Expenditure (Per month)<span style="color:red;">*</span> :</label>                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="number" class="form-control" name="expenditure">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="currentsavings">Current Savings <span style="color:red;">*</span>:</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="number" class="form-control" name="currentsavings">
+                                </div>
+                            </div>
+                        
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="dependentperson">Dependent Persons:</label>                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="number" class="form-control" name="dependentperson">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div clas="row">
+                            <div class="col-sm-6">
+                                <div class="col-sm-12">
+                                    <label for="pension">Age Pension<span style="color:red;">*</span> :</label>                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="radio">
+                                      <label><input type="radio" name="pension" value="Yes">Yes</label>
+                                    </div>
+                                    <div class="radio">
+                                      <label><input type="radio" name="pension" value="No">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br><br>
+                    <center>
+                        <button type="button" class="btn btn-primary" onclick="return ValidateForm2()">Submit</button><br><br><br>
+                        <a class="btn page_button back">Back</a>
+                        <a class="btn page_button continue">Continue</a>
+                    </center>  
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="Short_Term_Goals">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+            <div class="col-sm-12">
+                                    <label for="goalname">Goal Name <span style="color:red;">*</span> :</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <select class="form-control" name="goalname">
+					<option>select your goal</option>
+                                      <option>Buying a House</option>
+                                      <option>Education of Child</option>
+                                      <option>Domestic Vacation</option>
+                                      <option>Buying a Car</option>
+                                      <option>Child Marriage</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="goalvalue">Goal value in Today's value terms<span style="color:red;">*</span> :</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="number" class="form-control" name="goalvalue">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="timetogoal">Time to Goal (In months)<span style="color:red;">*</span> :</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="number" class="form-control" name="timetogoal">
+                                </div>
+                            </div>
+                        
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="investamount">Amount you intend to invest per month<span style="color:red;">*</span> :</label>                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="number" class="form-control" name="investamount">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="expectreturns">Expected rate of return you expect from your investment (%)<span style="color:red;">*</span> :</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" name="expectreturns">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 form-group">
+                                <div class="col-sm-12">
+                                    <label for="train">Select Training Data File<span style="color:red;">*</span> : </label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input id="fileuUpload" name="FileUpload" type="file">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <br><br><br>
+                    <center>
+			<button type="submit" name="Submit2" class="btn page_button " onclick="return ValidateForm3()">Submit</button><br><br><br>
+                        <a class="btn page_button back">Back</a>
+                        
+                    </center> </form>
+                </div>
+            </div>
+            </form>
+        </div>
+    </body>
+</html>
